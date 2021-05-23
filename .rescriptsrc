@@ -1,0 +1,7 @@
+const DudaConfig = require('./duda.config');
+
+module.exports = {
+  webpack: config => {
+    return DudaConfig.transformWebpack(config);
+  },
+};
