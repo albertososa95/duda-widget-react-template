@@ -16,9 +16,10 @@ class DudaConfig {
     static _transformOutput(output) {
         const pkg = require('./package.json');
 
-        output.filename = 'static/js/duda-widget.js';
+        output.filename = `static/js/duda-widget-${pkg.version}.js`;
         output.library = pkg.name;
         output.libraryTarget = 'umd';
+        output.publicPath = `${process.env.PUBLIC_URL}/`;
     }
 
     static _transformOptimization(optimization) {
