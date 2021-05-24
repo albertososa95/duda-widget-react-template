@@ -19,7 +19,7 @@ class DudaConfig {
         output.filename = `static/js/duda-widget-${pkg.version}.js`;
         output.library = pkg.name;
         output.libraryTarget = 'umd';
-        output.publicPath = `${process.env.PUBLIC_URL}/`;
+        output.publicPath = process.env.PUBLIC_URL ? `${process.env.PUBLIC_URL}/` : '/';
     }
 
     static _transformOptimization(optimization) {
